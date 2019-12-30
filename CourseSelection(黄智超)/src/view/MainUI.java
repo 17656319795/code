@@ -58,6 +58,12 @@ public class MainUI {
 				try{Message.show();}catch(Exception a){};
 			}
 		});
+		Button btn6=new Button("ÐÂÔö¿Î³Ì");
+		btn6.addMouseListener(new MouseAdapter(){
+			public void mouseClicked(MouseEvent e) {
+				try{TeacherAddCourse.show();}catch(Exception a){};
+			}
+		});
 		btn1.setBackground(new Color(135,206,235));
 		btn1.setBounds(70,450,150,70);
 		btn2.setBackground(new Color(135,206,235));
@@ -68,11 +74,14 @@ public class MainUI {
 		btn4.setBounds(490,230,200,100);
 		btn5.setBackground(new Color(135,206,235));
 		btn5.setBounds(970,450,150,70);
+		btn6.setBackground(new Color(135,206,235));
+		btn6.setBounds(1030,40,150,70);
 		f.add(btn1);
 		f.add(btn2);
 		f.add(btn3);
 		f.add(btn4);
 		f.add(btn5);
+		f.add(btn6);
 		String bgpath = ".\\background\\bg.jpg";
 		ImageIcon background = new ImageIcon(bgpath);
 		JLabel label = new JLabel(background);

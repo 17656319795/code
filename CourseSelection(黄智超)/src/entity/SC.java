@@ -29,7 +29,7 @@ public class SC implements IEntity {
 		return this.courseNoSelected;
 	}
 	public boolean isEmpty(){
-		if(courseNoSelected.isEmpty()){
+		if(grade==0){
 			return true;
 		}
 		return false;

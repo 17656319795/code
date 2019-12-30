@@ -2,10 +2,9 @@ package biz;
 
 import javax.swing.JOptionPane;
 
-import dao.StudentDao;
-import entity.IEntity;
-import entity.Student;
+import entity.*;
 import view.MainUI;
+import dao.*;
 
 public class StudentBiz {
 	StudentDao studentDao;
@@ -69,13 +68,15 @@ public class StudentBiz {
 		}
 	}
 	//打印当前登录学生信息
-	public void printStudentMessage(){
+	public void printStudentMessage()throws Exception{
 		student=MainUI.whoLogin();
+		SC sc=(SC)(SCDao.getInstance()).getEntity(student.getStudentNo());
 		JOptionPane.showMessageDialog(null, "姓名:"+student.getStudentName()+
 				"\n性别:"+student.getStudentGender()+
 				"\n年龄:"+student.getStudentAge()+
 				"\n院系:"+student.getStudentDepartment()+
-				"\n学号:"+student.getStudentNo()
+				"\n学号:"+student.getStudentNo()+
+				"\n学分:"+sc.getGrade()
 		, "学生信息", JOptionPane.OK_CANCEL_OPTION);
 	}
 }
